@@ -1,415 +1,140 @@
-/* ===== VARIÁVEIS DE COR ===== */
+/* Configuração geral e cores */
 :root {
-  --rosa-claro: #f9a8d4;
-  --rosa-escuro: #db2777;
-  --rosa-fundo: #fdf2f8;
-  --branco: #ffffff;
-  --texto: #3f3f46;
-  --borda-suave: #fbcfe8;
+  --cor-principal: #e91e63; /* Rosa principal */
+  --cor-secundaria: #fce4ec; /* Rosa claro para fundo de cards */
+  --cor-fundo: #fff5f8; /* Fundo suave da página */
+  --cor-hover: #f8bbd0; /* Rosa pastel ao passar o mouse */
+  --cor-texto: #333333;
+  --cor-borda: #f48fb1;
 }
 
-/* ===== RESET BÁSICO ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-[hidden] {
-  display: none !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: var(--rosa-fundo);
-  color: var(--texto);
-  line-height: 1.5;
-  padding: 16px;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  padding: 20px;
 }
 
-button,
-input {
-  font: inherit;
-}
-
-/* ===== CABEÇALHO ===== */
-.cabecalho {
-  background-color: var(--rosa-claro);
-  color: var(--rosa-escuro);
-  text-align: center;
-  padding: 28px 16px;
-  border-radius: 16px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 10px rgba(219, 39, 119, 0.15);
-}
-
-.cabecalho h1 {
-  font-size: 2rem;
-  margin-bottom: 4px;
-}
-
-.subtitulo {
-  font-size: 1rem;
-  font-weight: 600;
-  opacity: 0.85;
-}
-
-/* ===== CONTEÚDO ===== */
-.conteudo {
-  max-width: 1000px;
+.container {
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* ===== ÁREA DE ACESSO ===== */
-.area-acesso {
-  max-width: 480px;
-  margin: 0 auto 28px;
-  padding: 24px;
-  background-color: var(--branco);
-  border: 2px solid var(--borda-suave);
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(219, 39, 119, 0.08);
-}
-
-.area-acesso h2,
-#area-editor h2 {
-  color: var(--rosa-escuro);
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+/* Cabeçalho */
+.header {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.area-acesso > p {
-  text-align: center;
-  margin-bottom: 16px;
+.header h1 {
+  color: var(--cor-principal);
+  font-size: 2.2rem;
+  margin-bottom: 5px;
 }
 
-.dados-estudante {
-  background-color: var(--rosa-fundo);
-  border-radius: 10px;
-  padding: 12px 16px;
-  margin-bottom: 18px;
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
 }
 
-.dados-estudante p + p {
-  margin-top: 4px;
-}
-
-#form-acesso {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-#form-acesso label,
-.campo-editor label {
-  color: var(--rosa-escuro);
-  font-weight: 700;
-}
-
-#campo-pin,
-.campo-editor input {
-  width: 100%;
-  min-width: 0;
-  padding: 10px 12px;
-  border: 1px solid var(--borda-suave);
-  border-radius: 8px;
-  background-color: var(--branco);
-  color: var(--texto);
-}
-
-#campo-pin:focus,
-.campo-editor input:focus {
-  outline: 2px solid var(--rosa-claro);
-  outline-offset: 2px;
-}
-
-button {
-  padding: 10px 16px;
-  border: 0;
-  border-radius: 8px;
-  background-color: var(--rosa-escuro);
-  color: var(--branco);
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-button:hover:not(:disabled) {
-  background-color: #be185d;
-  transform: translateY(-1px);
-}
-
-button:focus-visible {
-  outline: 3px solid var(--rosa-claro);
-  outline-offset: 3px;
-}
-
-button:disabled {
-  opacity: 0.65;
-  cursor: wait;
-}
-
-#mensagem-acesso,
-#mensagem-boletim,
-#mensagem-editor {
-  margin-top: 12px;
-  font-weight: 600;
-  overflow-wrap: anywhere;
-}
-
-#mensagem-acesso:empty,
-#mensagem-boletim:empty,
-#mensagem-editor:empty {
-  display: none;
-}
-
-/* ===== CONTROLES DO BOLETIM ===== */
-.controles-boletim {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#botao-alterar-dados {
-  min-width: 180px;
-}
-
-/* ===== EDITOR DE NOTAS E FALTAS ===== */
-#area-editor {
-  margin-bottom: 28px;
-  padding: 20px;
-  background-color: var(--branco);
-  border: 2px solid var(--borda-suave);
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(219, 39, 119, 0.08);
-}
-
-#area-editor > p {
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-.editor-disciplina {
-  margin-bottom: 18px;
-  padding: 16px;
-  border: 1px solid var(--borda-suave);
-  border-radius: 10px;
-  background-color: #fffafd;
-}
-
-.editor-disciplina h3 {
-  margin-bottom: 12px;
-  color: var(--rosa-escuro);
-  font-size: 1rem;
-  overflow-wrap: anywhere;
-}
-
-.editor-grade {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.campo-editor {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  min-width: 0;
-}
-
-.campo-editor label {
-  font-size: 0.85rem;
-}
-
-.campo-editor input {
-  padding: 9px 8px;
-}
-
-.campo-editor input[aria-invalid="true"] {
-  border: 2px solid #b91c1c;
-  background-color: #fef2f2;
-}
-
-.erro-campo {
-  color: #b91c1c;
-  font-size: 0.8rem;
-  overflow-wrap: anywhere;
-}
-
-.acoes-editor {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-#botao-cancelar-edicao {
-  background-color: #71717a;
-}
-
-#botao-cancelar-edicao:hover:not(:disabled) {
-  background-color: #52525b;
-}
-
-/* ===== CARDS DE RESUMO ===== */
-.cards {
+/* Grid de Cards de Resumo */
+.cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin-bottom: 28px;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
 .card {
-  background-color: var(--branco);
-  border: 2px solid var(--borda-suave);
-  border-radius: 14px;
+  background-color: var(--cor-secundaria);
+  border: 1px solid var(--cor-borda);
+  border-radius: 16px; /* Cantos bem arredondados */
   padding: 18px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(219, 39, 119, 0.08);
-  transition: transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.1); /* Sombra suave */
 }
 
-.card:hover {
-  transform: translateY(-3px);
+.card h3 {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
 }
 
-.card .card-titulo {
-  font-size: 0.85rem;
-  color: var(--rosa-escuro);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
+.card-value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--cor-principal);
 }
 
-.card .card-valor {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--texto);
-  overflow-wrap: anywhere;
+.card-subtext {
+  display: block;
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 5px;
 }
 
-/* ===== TABELA ===== */
-.tabela-container {
-  background-color: var(--branco);
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(219, 39, 119, 0.08);
+/* Tabela Responsiva */
+.table-container {
+  overflow-x: auto; /* Permite rolar na horizontal em telas pequenas */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--cor-borda);
 }
 
-.tabela-container h2 {
-  color: var(--rosa-escuro);
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-  text-align: center;
-}
-
-.tabela-scroll {
-  overflow-x: auto;
-}
-
-table.boletim {
+table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 640px;
-}
-
-table.boletim th {
-  background-color: var(--rosa-claro);
-  color: var(--rosa-escuro);
-  padding: 12px 10px;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  text-align: center;
-}
-
-table.boletim td {
-  padding: 12px 10px;
-  text-align: center;
-  border-bottom: 1px solid var(--borda-suave);
-  font-size: 0.95rem;
-}
-
-table.boletim td:first-child {
   text-align: left;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #fce4ec;
+}
+
+th {
+  background-color: var(--cor-principal);
+  color: white;
   font-weight: 600;
-  overflow-wrap: anywhere;
 }
 
-table.boletim tbody tr:nth-child(even) {
-  background-color: #fdf2f8;
+/* Efeito ao passar o mouse na linha */
+tbody tr:hover {
+  background-color: var(--cor-hover); /* Tom pastel */
 }
 
-/* ===== BADGES DE SITUAÇÃO ===== */
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  white-space: nowrap;
+/* Destaques de situação */
+.status-bom {
+  color: #2e7d32;
+  font-weight: bold;
 }
 
-.badge-bom {
-  background-color: #dcfce7;
-  color: #166534;
+.status-atencao {
+  color: #c62828;
+  font-weight: bold;
 }
 
-.badge-atencao {
-  background-color: #fee2e2;
-  color: #991b1b;
+.status-indisponivel {
+  color: #757575;
+  font-style: italic;
 }
 
-.badge-sem-nota {
-  background-color: #f3f4f6;
-  color: #52525b;
-}
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 500px) {
-  body {
-    padding: 10px;
+/* Adaptação para celular */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 1.8rem;
   }
 
-  .cabecalho h1 {
-    font-size: 1.6rem;
-  }
-
-  .area-acesso,
-  #area-editor,
-  .tabela-container {
-    padding: 16px;
-  }
-
-  .cards {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 10px;
-  }
-
-  .card {
-    padding: 14px 10px;
-  }
-
-  .card .card-valor {
-    font-size: 1.5rem;
-  }
-
-  .editor-grade {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  table.boletim td,
-  table.boletim th {
-    padding: 10px 6px;
-    font-size: 0.82rem;
-  }
-
-  .acoes-editor {
-    flex-direction: column;
-  }
-
-  .acoes-editor button {
-    width: 100%;
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
   }
 }
