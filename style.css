@@ -6,6 +6,8 @@
   --cor-hover: #f8bbd0; /* Rosa pastel ao passar o mouse */
   --cor-texto: #333333;
   --cor-borda: #f48fb1;
+  --cor-erro: #c62828;
+  --cor-sucesso: #2e7d32;
 }
 
 * {
@@ -42,6 +44,98 @@ body {
   font-size: 1.1rem;
   color: #666;
   font-weight: 500;
+}
+
+/* Área de Login / PIN */
+.login-box {
+  background-color: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 16px;
+  padding: 25px;
+  max-width: 400px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.12);
+}
+
+.login-box h2 {
+  color: var(--cor-principal);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.info-aluno {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: var(--cor-principal);
+  box-shadow: 0 0 5px rgba(233, 30, 99, 0.3);
+}
+
+/* Botões */
+button {
+  background-color: var(--cor-principal);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #d81b60;
+}
+
+/* Painel de Ações no Boletim */
+.painel-acoes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+/* Mensagens de Status */
+.mensagem-status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.mensagem-status.erro {
+  color: var(--cor-erro);
+}
+
+.mensagem-status.sucesso {
+  color: var(--cor-sucesso);
 }
 
 /* Grid de Cards de Resumo */
@@ -111,6 +205,21 @@ tbody tr:hover {
   background-color: var(--cor-hover); /* Tom pastel */
 }
 
+/* Campos de entrada na tabela durante edição */
+.input-tabela {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.input-tabela.invalido {
+  border-color: var(--cor-erro);
+  background-color: #ffebee;
+}
+
 /* Destaques de situação */
 .status-bom {
   color: #2e7d32;
@@ -136,5 +245,11 @@ tbody tr:hover {
   th, td {
     padding: 10px 8px;
     font-size: 0.85rem;
+  }
+
+  .input-tabela {
+    width: 48px;
+    padding: 4px;
+    font-size: 0.8rem;
   }
 }
