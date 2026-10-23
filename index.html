@@ -2,118 +2,67 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <!-- Garante que o site fique bom no celular -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boletim Digital</title>
+  <title>Boletim Digital - 8º Ano</title>
+  <!-- Vinculando nosso arquivo de estilos CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- CABEÇALHO -->
-  <header class="cabecalho">
-    <h1>Boletim Digital</h1>
-    <p class="subtitulo">8º Ano — Estudante Exemplo</p>
-  </header>
+  <div class="container">
+    <!-- Cabeçalho do Boletim -->
+    <header class="header">
+      <h1>Boletim Digital</h1>
+      <p class="subtitle">8º Ano — Estudante Exemplo</p>
+    </header>
 
-  <main class="conteudo">
-
-    <!-- ÁREA DE ACESSO DO ESTUDANTE -->
-    <section class="area-acesso" id="area-acesso">
-      <h2>Acesso ao Boletim</h2>
-      <p>Digite seu PIN para consultar suas notas e faltas.</p>
-
-      <div class="dados-estudante">
-        <p><strong>Série:</strong> 8º Ano</p>
-        <p><strong>Turma:</strong> 8A</p>
-        <p><strong>Número de chamada:</strong> 33</p>
+    <!-- Área de Cards de Resumo -->
+    <section class="cards-grid">
+      <div class="card">
+        <h3>Média Geral</h3>
+        <p id="card-media-geral" class="card-value">—</p>
       </div>
-
-      <form id="form-acesso" autocomplete="off">
-        <label for="campo-pin">PIN</label>
-        <input
-          type="password"
-          id="campo-pin"
-          name="pin"
-          inputmode="numeric"
-          autocomplete="off"
-          aria-describedby="mensagem-acesso"
-          required
-        >
-        <button type="submit" id="botao-entrar">Entrar</button>
-      </form>
-
-      <p id="mensagem-acesso" role="status" aria-live="polite"></p>
+      <div class="card">
+        <h3>Total de Faltas</h3>
+        <p id="card-total-faltas" class="card-value">—</p>
+      </div>
+      <div class="card">
+        <h3>Bom Desempenho</h3>
+        <p id="card-bom-desempenho" class="card-value">—</p>
+      </div>
+      <div class="card">
+        <h3>Precisam de Atenção</h3>
+        <p id="card-atencao" class="card-value">—</p>
+      </div>
+      <div class="card">
+        <h3>Frequência Geral</h3>
+        <p id="card-frequencia" class="card-value">—</p>
+        <span class="card-subtext">Frequência adequada</span>
+      </div>
     </section>
 
-    <!-- CONTEÚDO DO BOLETIM: DISPONÍVEL APÓS O ACESSO -->
-    <section id="area-boletim" hidden>
-
-      <!-- CONTROLES DE EDIÇÃO -->
-      <section class="controles-boletim" id="controles-boletim">
-        <button type="button" id="botao-alterar-dados">
-          Alterar dados
-        </button>
-
-        <p id="mensagem-boletim" role="status" aria-live="polite"></p>
-      </section>
-
-      <!-- EDITOR DE NOTAS E FALTAS -->
-      <section id="area-editor" hidden>
-        <h2>Alterar dados</h2>
-        <p>
-          Edite as notas e faltas de cada trimestre.
-          As alterações precisam ser salvas para serem mantidas.
-        </p>
-
-        <form id="form-editor" novalidate>
-          <div id="lista-editor"></div>
-
-          <div class="acoes-editor">
-            <button type="submit" id="botao-salvar-alteracoes">
-              Salvar alterações
-            </button>
-
-            <button type="button" id="botao-cancelar-edicao">
-              Cancelar
-            </button>
-          </div>
-
-          <p id="mensagem-editor" role="status" aria-live="polite"></p>
-        </form>
-      </section>
-
-      <!-- CARDS DE RESUMO (preenchidos pelo JavaScript) -->
-      <section class="cards" id="cards">
-        <!-- Cada card será criado pelo script.js -->
-      </section>
-
-      <!-- TABELA DE NOTAS (preenchida pelo JavaScript) -->
-      <section class="tabela-container">
-        <h2>Notas por Disciplina</h2>
-        <div class="tabela-scroll">
-          <table class="boletim">
-            <thead>
-              <tr>
-                <th>Disciplina</th>
-                <th>1º Tri</th>
-                <th>2º Tri</th>
-                <th>3º Tri</th>
-                <th>Média</th>
-                <th>Faltas</th>
-                <th>Situação</th>
-              </tr>
-            </thead>
-            <tbody id="corpo-tabela">
-              <!-- As linhas serão criadas pelo script.js -->
-            </tbody>
-          </table>
-        </div>
-      </section>
-
+    <!-- Tabela Responsiva de Disciplinas -->
+    <section class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Disciplina</th>
+            <th>1º Tri</th>
+            <th>2º Tri</th>
+            <th>3º Tri</th>
+            <th>Média</th>
+            <th>Faltas</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-boletim">
+          <!-- As linhas da tabela serão inseridas automaticamente via JavaScript -->
+        </tbody>
+      </table>
     </section>
+  </div>
 
-  </main>
-
+  <!-- Vinculando nosso código JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
