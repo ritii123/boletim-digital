@@ -174,6 +174,57 @@ button:hover {
   margin-top: 5px;
 }
 
+/* Área dos Gráficos */
+.area-graficos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.grafico-card {
+  background-color: #ffffff;
+  border: 1px solid var(--cor-borda);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 10px rgba(233, 30, 99, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grafico-card.card-perigo {
+  border: 2px solid var(--cor-erro);
+  box-shadow: 0 4px 14px rgba(198, 40, 40, 0.25);
+}
+
+.grafico-card h2 {
+  font-size: 1rem;
+  color: var(--cor-principal);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.grafico-container {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 260px;
+}
+
+.badge-perigo {
+  display: inline-block;
+  background-color: var(--cor-erro);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  align-self: center;
+  text-transform: uppercase;
+}
+
 /* Tabela Responsiva */
 .table-container {
   overflow-x: auto; /* Permite rolar na horizontal em telas pequenas */
@@ -236,10 +287,21 @@ tbody tr:hover {
   font-style: italic;
 }
 
-/* Adaptação para celular */
+/* Adaptação para Tablet */
+@media (max-width: 900px) {
+  .area-graficos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Adaptação para Celular */
 @media (max-width: 600px) {
   .header h1 {
     font-size: 1.8rem;
+  }
+
+  .area-graficos {
+    grid-template-columns: 1fr;
   }
 
   th, td {
